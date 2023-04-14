@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Js ludoGame</h1>
+
+      <div class="dice">
+        <p id="first">Player 1</p>
+        <img id="img1" src="images/dice1.png">
+      </div>
+
+      <div class="dice">
+        <p id="second"> Player 2</p>
+        <img id="img2" src="images/dice6.png">
+      </div>
+
+     
+      <div id="result"></div>
+
+
+      <button  onclick="ludoGame()" class="btn">Roll</button> 
+      <script>
+        ludoGame = () => {
+        var Play1 = Math.floor( Math.random()*6)+1;
+        var Play1dice =`images/dice${Play1}.png`;
+          document.getElementById("img1").setAttribute('src' , Play1dice);    
+        
+          /* ========== first player ramdom number generate =========== */
+        var Play2 = Math.floor(Math.random()*6)+1;
+        var Play2dice = `images/dice${Play2}.png`;
+        document.querySelector("#img2").setAttribute("src",Play2dice);
+
+        /* ========== second player ramdom number generate =========== */
+          if(Play1 > Play2) {
+            document.querySelector("h1").innerHTML="Player 1  won :)";
+          }
+          else if(Play1 < Play2){
+            document.querySelector("h1").innerHTML="player 2 won :)";
+          }
+          else{
+            document.querySelector("h1").innerHTML=" DRAW !";
+          }
+      }        
+        </script>
+
+    </div><!--- container end --->
+
+
+  </body>
+  
+  <footer>
+    www 🎲 App Brewery 🎲 com
+  </footer>
+</html>
